@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<header>
+    <link rel="stylesheet" href="escolha.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="estilo.css">
+    <h1> UEFA Champions</h1>
+</header>
+<style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .image-container {
+            margin-right: 20px;
+        }
+
+        .hidden-image {
+            display: none;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background-color: #ddd;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ccc;
+        }
+
+        .span {
+            font-weight: bold;
+        }
+
+        .input {
+            margin-right: 10px;
+        }
+
+        table {
+    border-collapse: separate;
+    border-spacing: 50px;
+}
+
+.table-container {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+table th {
+    border-bottom: 1px solid black;
+}
+
+th.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+}
+table td{
+    text-align: center;
+}
+
+table img {
+    width: 60px;
+    height: auto;
+}
+
+table .estadio {
+    width: 250px;
+    height: auto;
+}
+
+
+
+  </style>
+
+<body>
+    <div class="nav">
+        <a href="index.html">Início</a>
+        <a href="sorteio.html">Sorteio</a>
+        <a href="fasedegrupos.html">Fase de grupos</a>
+        <a href="faseliminatoria.html">Fase mata-mata</a>
+        <a href="antigosvencedores.html" id="atual">Antigos Vencedores</a>
+    </div> 
+
+            <!-- Tirado Da Net -->
+    <div class="container" style="margin-top: 20px;">
+        <div class="image-container">
+            <img id="imagem1" src="images/championschamps1.jpg" style="width: auto; width: 100%;">
+            <img id="imagem2" src="images/championschamps2.jpg" style="width: auto;  width: 100%;" class="hidden-image">
+        </div>
+
+        <div class="wrapper">
+            <div class="option">
+                <input class="input" type="radio" name="btn" value="option1" id="option1" checked>
+                <label class="btn" for="option1">
+                    <span class="span"> &lt;1991 </span>
+                </label>
+            </div>
+            <div class="option">
+                <input class="input" type="radio" name="btn" value="option2" id="option2">
+                <label class="btn" for="option2">
+                    <span class="span"> 1992> </span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var option1 = document.getElementById("option1");
+        var option2 = document.getElementById("option2");
+        var imagem1 = document.getElementById("imagem1");
+        var imagem2 = document.getElementById("imagem2");
+
+        option1.addEventListener("change", function() {
+            if (this.checked) {
+                imagem1.classList.remove("hidden-image");
+                imagem2.classList.add("hidden-image");
+            }
+        });
+
+        option2.addEventListener("change", function() {
+            if (this.checked) {
+                imagem1.classList.add("hidden-image");
+                imagem2.classList.remove("hidden-image");
+            }
+        });
+    </script>
+         <!-- Tirado Da Net -->
+    <hr width="600px">
+     <h1 style="margin-top: 50px;"> Histórico de Campeões</h1>
+    
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+  var tableContainer = document.querySelector('.table-container');
+  var tableHeader = document.querySelector('thead');
+
+  tableContainer.addEventListener('scroll', function() {
+    var scrollTop = this.scrollTop;
+    tableHeader.style.transform = 'translateY(' + scrollTop + 'px)';
+  });
+});
+
+    </script>
+    <div class="table-container">
+    <table>
+        <tr>
+            <th class="sticky-header">Clube</th>
+            <th class="sticky-header">Fundação</th>
+            <th class="sticky-header">Nº Finais</th>
+            <th class="sticky-header">Nº Champions</th>
+            <th class="sticky-header">Ano de campeão</th>
+            <th class="sticky-header">País</th>
+            <th class="sticky-header">Nº Jogos</th>
+            <th class="sticky-header">Nº Participações</th>
+            <th class="sticky-header" class="estadio">Estádio</th>
+        </tr>
+        <tr>
+          <td><img src="clubes/realmadrid.jpg"> <h4>Real Madrid</h4></td>
+          <td>1902</td>
+          <td>17</td>
+          <td>14</td>
+          <td>1955/56, 1956/57, 1957/58, 1958/59, 1959/60, 1965/66, 1997/98, 1999/00, 2001/02, 2013/14, 2015/16, 2016/17, 2017/18, 2021/22 </td>
+          <td>Espanha</td>
+          <td>474</td>
+          <td>53</td>
+          <td><img src="estadios/realmadrid.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/milan.jpg"><h4>Ac Milan</h4></td>
+            <td>1899</td>
+            <td>11</td>
+            <td>7</td>
+            <td>1962/63, 1968/69, 1988/89, 1989/90, 1993/94, 2002/03, 2006/07</td>
+            <td>Itália</td>
+            <td>251</td>
+            <td>30</td>
+            <td><img src="estadios/milan.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/liverpool.jpg"><h4>Liverpool</h4></td>
+            <td>1892</td>
+            <td>9</td>
+            <td>6</td>
+            <td>1976/77, 1977/78, 1980/81, 1983/84, 2004/05, 2018/19</td>
+            <td>Inglaterra</td>
+            <td>230</td>
+            <td>27</td>
+            <td><img src="estadios/liverpool.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/Munchen.jpg"><h4>Bayern Munchen</h4></td>
+            <td>1892</td>
+            <td>11</td>
+            <td>6</td>
+            <td>1973/74, 1974/75, 1975/76, 2000/01, 2012/13, 2019/20</td>
+            <td>Alemanha</td>
+            <td>376</td>
+            <td>39</td>
+            <td><img src="estadios/bayern.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/barcelona.jpg"><h4>Barcelona</h4></td>
+            <td>1899</td>
+            <td>8</td>
+            <td>6</td>
+            <td>1991/92, 2005/06, 2008/09, 2010/11, 2014/15</td>
+            <td>Espanha</td>
+            <td>323</td>
+            <td>32</td>
+            <td><img src="estadios/barcelona.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/ajax.jpg"><h4>Ajax</h4></td>
+            <td>1900</td>
+            <td>6</td>
+            <td>4</td>
+            <td>1970/71, 1971/72, 1972/73, 1994/95</td>
+            <td>Holanda</td>
+            <td>215</td>
+            <td>33</td>
+            <td><img src="estadios/ajax.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/manunited.jpg"><h4>Man United</h4></td>
+            <td>1878</td>
+            <td>5</td>
+            <td>3</td>
+            <td>1967/68, 1998/99, 2007/08</td>
+            <td>Inglaterra</td>
+            <td>279</td>
+            <td>29</td>
+            <td><img src="estadios/manunited.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/inter.jpg"><h4>Inter</h4></td>
+            <td>1908</td>
+            <td>5</td>
+            <td>3</td>
+            <td>1963/64, 1964/65, 2009/10</td>
+            <td>Italia</td>
+            <td>195</td>
+            <td>23</td>
+            <td><img src="estadios/iner.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/chelsea.jpg"><h4>Chelsea</h4></td>
+            <td>1905</td>
+            <td>3</td>
+            <td>2</td>
+            <td>2011/12, 2020/21</td>
+            <td>Inglaterra</td>
+            <td>197</td>
+            <td>19</td>
+            <td><img src="estadios/chelsea.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/nottingham.jpg"><h4>Nottingham Forest</h4></td>
+            <td>1865</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1978/79, 1979/80</td>
+            <td>Inglaterra</td>
+            <td>20</td>
+            <td>3</td>
+            <td><img src="estadios/nottingham.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/benfica.jpg"><h4>Benfica</h4></td>
+            <td>1904</td>
+            <td>7</td>
+            <td>2</td>
+            <td>1960/61, 1961/62</td>
+            <td>Portugal</td>
+            <td>260</td>
+            <td>39</td>
+            <td><img src="estadios/benfica.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/juventus.jpg"><h4>Juventus</h4></td>
+            <td>1897</td>
+            <td>9</td>
+            <td>2</td>
+            <td>1984/85, 1995/96</td>
+            <td>Itália</td>
+            <td>197</td>
+            <td>37</td>
+            <td><img src="estadios/juventus.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/porco.jpg"><h4>Porto</h4></td>
+            <td>1906</td>
+            <td>9</td>
+            <td>2</td>
+            <td>1984/85, 1995/96</td>
+            <td>Portugal</td>
+            <td>249</td>
+            <td>35</td>
+            <td><img src="estadios/porto.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/mancity.jpg"><h4>Man City</h4></td>
+            <td>1880</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2022/23</td>
+            <td>Inglaterra</td>
+            <td>117</td>
+            <td>13</td>
+            <td><img src="estadios/mancity.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/dortmund.jpg"><h4>Borussia Dortmund</h4></td>
+            <td>1909</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1996/97</td>
+            <td>Alemanha</td>
+            <td>164</td>
+            <td>20</td>
+            <td><img src="estadios/Dortmund.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/feynord.jpg"><h4>Feynord</h4></td>
+            <td>1908</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1969/70</td>
+            <td>Holanda</td>
+            <td>75</td>
+            <td>13</td>
+            <td><img src="estadios/feynord.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/marselle.jpg"><h4>Marseille</h4></td>
+            <td>1899</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1992/93</td>
+            <td>França</td>
+            <td>75</td>
+            <td>13</td>
+            <td><img src="estadios/marseille.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/astonvilla.jpg"><h4>Aston Villa</h4></td>
+            <td>1874</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1992/93</td>
+            <td>Inglaterra</td>
+            <td>15</td>
+            <td>2</td>
+            <td><img src="estadios/astonvilla.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/hamburg.jpg"><h4>Hamburg</h4></td>
+            <td>1874</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1982/83</td>
+            <td>Alemanha</td>
+            <td>39</td>
+            <td>6</td>
+            <td><img src="estadios/hamburg.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/estrelavermelha.jpg"><h4>CSKA Sofia</h4></td>
+            <td>1945</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1982/83</td>
+            <td>Sérvia</td>
+            <td>98</td>
+            <td>19</td>
+            <td><img src="estadios/estrelavermelha.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/fcsb.jpg"><h4>Fcsb</h4></td>
+            <td>1947</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1985/86</td>
+            <td>Roménia</td>
+            <td>98</td>
+            <td>19</td>
+            <td><img src="estadios/fscb.jpg" class="estadio"></td>
+        </tr>
+        <tr>
+            <td><img src="clubes/psv.jpg"><h4>PSV</h4></td>
+            <td>1913</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1987/88</td>
+            <td>Holanda</td>
+            <td>159</td>
+            <td>26</td>
+            <td><img src="estadios/psv.jpg" class="estadio"></td>
+        </tr><tr>
+            <td><img src="clubes/celtic.jpg"><h4>Celtic</h4></td>
+            <td>1887</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1966/67</td>
+            <td>Escócia</td>
+            <td>150</td>
+            <td>26</td>
+            <td><img src="estadios/celtic.jpg" class="estadio"></td>
+        </tr>
+      </table>
+    </div>
+</body>
+
+<footer style="background-color: rgba(108, 108, 108, 0.286); width: auto; height: 100px; margin-top: 10px;">
+
+</footer>

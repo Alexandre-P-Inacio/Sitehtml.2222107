@@ -1,0 +1,132 @@
+
+  
+  header h1 {
+    text-align: center;
+  }
+  
+  body{
+
+    font-family: 'Belanosima', sans-serif;
+
+    font-family: 'Josefin Sans', sans-serif;
+
+    font-family: 'Oswald', sans-serif;
+
+    font-family: 'Varela Round', sans-serif;
+
+    font-weight: bold;
+    
+    text-align: center;
+    
+    margin: 0px;
+
+} 
+
+
+  
+
+  .menu {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    width: 99vw;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    background-color: #ffffff;
+
+    overflow: hidden;
+
+  }
+
+
+
+
+  .menu div {
+
+    display: flex;
+
+    align-items: center;
+
+  }
+
+
+
+
+  .menu a {
+
+    color: rgb(0, 0, 0);
+
+    text-align: center;
+
+    padding: 0px 16px;
+
+    font-weight: 1000;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+  }
+
+  .menu a:hover {
+
+    color: #00aeff;
+
+  }
+
+  .menu a.active {
+
+    background-color: #4CAF50;
+
+    color: rgb(255, 255, 255);
+
+  }
+
+  .menu h2 {
+    margin-right: 200px;
+  }  
+
+  
+  .title {
+    text-align: center;
+    display: flex;
+    font-size: 24px;
+    margin-left: 370px;
+    margin-right: 370px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .container2, .container {
+    display: flex;
+    flex-direction: row;
+    
+    line-height: 35px;
+
+  }
+
+  h3{
+    display: flex;
+  }
+
+  .container2{
+    width: 50vw;
+  }
+
+  #borderRight{
+    border-right: 2px solid black; 
+    margin-right: 25px;
+    margin-left: 10px;
+    display: flex;
+  }
+
+  #borderBottum{
+    border-bottom: 2px solid black; 
+    margin-bottom: 25px;
+  }
